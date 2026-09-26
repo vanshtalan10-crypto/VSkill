@@ -214,11 +214,6 @@ def results():
 <div class="container">
 <div class="form-box">
 <h1>Certificate Result</h1>
-<div class="notice">
-<b>DEMO / SAMPLE</b><br>
-This is a study/demo certificate lookup and is not an official verification service.
-</div>
-
 <form method="POST">
 <label>Certificate ID</label>
 <input name="certificate_id" placeholder="Enter certificate ID" required>
@@ -234,7 +229,7 @@ This is a study/demo certificate lookup and is not an official verification serv
         if os.path.exists(certificate_path):
             body += """
             <hr>
-            <h2>Demo Certificate</h2>
+            <h2>Certificate Preview</h2>
             <img class="certificate" src="/static/certificate.png" alt="Demo certificate">
             <br><br>
             <a class="btn" href="/static/certificate.png" download="VSkill-Demo-Certificate.png">Download Certificate</a>
@@ -341,4 +336,5 @@ init_db()
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
