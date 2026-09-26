@@ -162,9 +162,9 @@ It is not an official VSkill credential verification service.
 <h2>Popular Courses</h2>
 <div class="grid">""" + cards + """</div>
 
-<h2>Certificate Demo</h2>
-<p>Use the Results page to test the sample certificate lookup.</p>
-<a class="btn" href="/results">Check Demo Result</a>
+<h2>Certificate</h2>
+<p></p>
+<a class="btn" href="/results">Check Result</a>
 </div>
 """
     return page("VSkill - Learn Skills That Matter", body)
@@ -208,7 +208,7 @@ def results():
         conn.close()
 
         if not result:
-            message = "No demo result found for this ID."
+            message = "No result found for this ID."
 
     body = """
 <div class="container">
@@ -232,7 +232,7 @@ def results():
             <h2>Certificate Preview</h2>
             <img class="certificate" src="/static/certificate.png" alt="Certificate preview">
             <br><br>
-            <a class="btn" href="/static/certificate.png" download="VSkill-Demo-Certificate.png">Download Certificate</a>
+            <a class="btn" href="/static/certificate.png" download="VSkill-Certificate.png">Download Certificate</a>
             """
 
     body += "</div></div>"
@@ -263,14 +263,14 @@ def admin():
             ))
             conn.commit()
             conn.close()
-            message = "Demo result uploaded successfully."
+            message = "Result uploaded successfully."
         except Exception as e:
             message = "Could not save result: " + str(e)
 
     body = """
 <div class="container">
 <div class="form-box">
-<h1>Admin - Demo Result Upload</h1>
+<h1>Admin - Result Upload</h1>
 
 """
 
@@ -303,7 +303,7 @@ def admin():
 <label>Result Date</label>
 <input name="result_date" required>
 
-<button class="btn" type="submit">Upload Demo Result</button>
+<button class="btn" type="submit">Upload Result</button>
 </form>
 </div>
 </div>
@@ -336,5 +336,6 @@ init_db()
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
