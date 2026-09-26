@@ -114,7 +114,7 @@ def footer():
     return """
 <footer>
 <p>VSkill Demo Platform</p>
-<p>DEMO / SAMPLE — For study and demonstration purposes.</p>
+
 <p>Not an official credential verification service.</p>
 </footer>
 """
@@ -230,7 +230,7 @@ def results():
             body += """
             <hr>
             <h2>Certificate Preview</h2>
-            <img class="certificate" src="/static/certificate.png" alt="Demo certificate">
+            <img class="certificate" src="/static/certificate.png" alt="Certificate preview">
             <br><br>
             <a class="btn" href="/static/certificate.png" download="VSkill-Demo-Certificate.png">Download Certificate</a>
             """
